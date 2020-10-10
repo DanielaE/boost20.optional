@@ -1,11 +1,11 @@
-﻿#include <optional>
+#include <optional>
 import boost.optional;
 
 using namespace boost;
 
 //static_assert(dtl::optional_type<boost::optional<int>>);
 
-class nohash {};
+class nohash{};
 
 int main() {
 	int i = __cplusplus;
@@ -22,14 +22,14 @@ int main() {
 	os = oi;
 	ok = os == oi;
 	ok = os == os;
-	//	ok = ::boost::dtl::eq_v(i, 42);
+//	ok = ::boost::dtl::eq_v(i, 42);
 
 	auto h = std::hash<optional<int>>{}(oi);
 	(void)h;
 	optional<nohash> onh;
 	static_assert(!std::is_default_constructible_v<std::hash<optional<nohash>>>);
 	static_assert(!std::is_default_constructible_v<std::hash<optional<const nohash>>>);
-	static_assert(!std::is_default_constructible_v<std::hash<optional<nohash&>>>);
-	static_assert(!std::is_default_constructible_v<std::hash<optional<const nohash&>>>);
+	static_assert(!std::is_default_constructible_v<std::hash<optional<nohash &>>>);
+	static_assert(!std::is_default_constructible_v<std::hash<optional<const nohash &>>>);
 	return *oi + ok;
 }

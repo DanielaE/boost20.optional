@@ -1,4 +1,4 @@
-﻿#include <optional/optional.hpp>
+#include <optional/optional.hpp>
 
 
 using namespace boost;
@@ -29,7 +29,7 @@ int main() {
 	optional<nohash> onh;
 	static_assert(!std::is_default_constructible_v<std::hash<optional<nohash>>>);
 	static_assert(!std::is_default_constructible_v<std::hash<optional<const nohash>>>);
-	static_assert(!std::is_default_constructible_v<std::hash<optional<nohash&>>>);
-	static_assert(!std::is_default_constructible_v<std::hash<optional<const nohash&>>>);
+	static_assert(!std::is_default_constructible_v<std::hash<optional<nohash &>>>);
+	static_assert(!std::is_default_constructible_v<std::hash<optional<const nohash &>>>);
 	return *oi + ok;
 }

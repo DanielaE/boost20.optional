@@ -269,11 +269,10 @@ OPTIONAL_NOEXPORT_END
 
 OPTIONAL_EXPORT namespace OPTIONAL_NAMESPACE {
 
-//[optional.optional]
+// [optional.optional]
 template <typename T>
 class optional : public dtl::base_optional<T> {
-	using base       = dtl::base_optional<T>;
-	using value_type = T;
+	using base = dtl::base_optional<T>;
 
 	template <typename Factory>
 	void construct_at(void * storage, Factory && f) {
@@ -298,6 +297,8 @@ class optional : public dtl::base_optional<T> {
 	}
 
 public:
+	using value_type = T;
+
 	// [optional.object.ctor]
 	[[nodiscard]] constexpr optional() noexcept = default;
 	[[nodiscard]] constexpr optional(std::nullopt_t) noexcept {};

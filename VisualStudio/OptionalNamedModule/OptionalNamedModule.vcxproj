@@ -21,7 +21,6 @@
   <PropertyGroup Label="Globals">
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{9d54e137-fb3b-41b5-ac35-94ead5d5bc53}</ProjectGuid>
-    <RootNamespace>OptionalModule</RootNamespace>
     <WindowsTargetPlatformVersion>$(DefaultWindowsSDKVersion)</WindowsTargetPlatformVersion>
     <ProjectName>boost.optional</ProjectName>
   </PropertyGroup>
@@ -37,11 +36,10 @@
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup>
     <ClCompile>
       <ModuleOutputFile>$(BmiOutputDir)$(ProjectName).ifc</ModuleOutputFile>
-      <PreprocessorDefinitions>OPTIONAL_NAMED_MODULE=$(ProjectName);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OPTIONAL_NAMED_MODULE=$(ProjectName);OPTIONAL_NOMINATED_INCLUDE=%22optional.hpp%22;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -50,5 +48,4 @@
     </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets" />
 </Project>

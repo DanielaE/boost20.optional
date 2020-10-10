@@ -21,7 +21,6 @@
   <PropertyGroup Label="Globals">
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{65b8e955-e872-4ede-a75d-97aae81c2bc5}</ProjectGuid>
-    <RootNamespace>TestHeaderModule</RootNamespace>
     <WindowsTargetPlatformVersion>$(DefaultWindowsSDKVersion)</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

@@ -1,11 +1,11 @@
-﻿import <optional/optional.hpp>;
+import <optional/optional.hpp>;
 #include <optional>
 
 using namespace boost;
 
 //static_assert(dtl::optional_type<boost::optional<int>>);
 
-class nohash {};
+class nohash{};
 
 int main() {
 	int i = __cplusplus;
